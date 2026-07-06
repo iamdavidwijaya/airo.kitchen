@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Airo Kitchen Operations Platform</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <div class="brand">
+          <div class="brand-mark" aria-label="Airo Kitchen logo">
+            <span>AI</span>
+            <span>RO</span>
+          </div>
+          <div>
+            <strong>Airo Kitchen</strong>
+            <span>JKT dine-room ops</span>
+          </div>
+        </div>
+        <nav>
+          <button class="nav-item active" data-view="dashboard">Dashboard</button>
+          <button class="nav-item" data-view="pos">Cloud POS</button>
+          <button class="nav-item" data-view="kds">Kitchen Display</button>
+          <button class="nav-item" data-view="inventory">Inventory</button>
+          <button class="nav-item" data-view="crm">CRM & Loyalty</button>
+        </nav>
+        <div class="branch-card">
+          <span>Active Branch</span>
+          <strong>Kelapa Gading</strong>
+          <small>JKT + MDN synced</small>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Restaurant command center</p>
+            <h1 id="page-title">Dashboard</h1>
+          </div>
+          <div class="top-actions">
+            <button id="theme-toggle" class="icon-button" aria-label="Toggle theme">◐</button>
+            <button class="primary-button">New Order</button>
+          </div>
+        </header>
+
+        <section id="dashboard" class="view active">
+          <div class="metric-grid">
+            <article class="metric">
+              <span>Today's Sales</span>
+              <strong>Rp 42.8M</strong>
+              <small>+18% vs last Tuesday</small>
+            </article>
+            <article class="metric">
+              <span>Average Order</span>
+              <strong>Rp 186K</strong>
+              <small>229 completed orders</small>
+            </article>
+            <article class="metric warning">
+              <span>Low Stock</span>
+              <strong>11 items</strong>
+              <small>3 critical for dinner service</small>
+            </article>
+            <article class="metric">
+              <span>Repeat Guests</span>
+              <strong>37%</strong>
+              <small>Membership growth +9%</small>
+            </article>
+          </div>
+
+          <div class="content-grid">
+            <section class="panel large-panel">
+              <div class="panel-heading">
+                <h2>Branch Performance</h2>
+                <span>Live sync</span>
+              </div>
+              <div class="bar-chart" aria-label="Branch sales bar chart">
+                <div style="--value: 82%"><span>JKT Kelapa Gading</span></div>
+                <div style="--value: 68%"><span>MDN Asia</span></div>
+                <div style="--value: 55%"><span>MDN Cemara</span></div>
+                <div style="--value: 46%"><span>GoFood</span></div>
+                <div style="--value: 38%"><span>GrabFood</span></div>
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-heading">
+                <h2>AI Forecast</h2>
+                <span>Tonight</span>
+              </div>
+              <div class="forecast">
+                <strong>Busy window: 19:00-21:00</strong>
+                <p>Prepare +24 portions of truffle mie ayam and raise chicken stock par by 7.5 kg.</p>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section id="pos" class="view">
+          <div class="pos-layout">
+            <section class="menu-grid" aria-label="Menu items"></section>
+            <aside class="order-ticket">
+              <div class="panel-heading">
+                <h2>Table 12</h2>
+                <span>Dine-in</span>
+              </div>
+              <div id="ticket-lines"></div>
+              <div class="ticket-total">
+                <span>Total</span>
+                <strong id="ticket-total">Rp 0</strong>
+              </div>
+              <div class="payment-row">
+                <button>Cash</button>
+                <button>QRIS</button>
+                <button>Card</button>
+              </div>
+              <button class="primary-button full">Send to Kitchen</button>
+            </aside>
+          </div>
+        </section>
+
+        <section id="kds" class="view">
+          <div class="kds-board"></div>
+        </section>
+
+        <section id="inventory" class="view">
+          <div class="table-panel">
+            <div class="panel-heading">
+              <h2>Inventory Alerts</h2>
+              <span>Central warehouse + branches</span>
+            </div>
+            <table>
+              <thead>
+                <tr><th>Item</th><th>Branch</th><th>Stock</th><th>Status</th><th>Suggestion</th></tr>
+              </thead>
+              <tbody id="inventory-rows"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="crm" class="view">
+          <div class="content-grid">
+            <section class="panel large-panel">
+              <div class="panel-heading">
+                <h2>Loyalty Segments</h2>
+                <span>18,420 guests</span>
+              </div>
+              <div class="segment-list">
+                <div><strong>Gold Members</strong><span>4,280 guests, Rp 2.1B CLV</span></div>
+                <div><strong>Birthday Campaign</strong><span>612 guests this month</span></div>
+                <div><strong>At-risk Regulars</strong><span>904 guests inactive 45+ days</span></div>
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-heading">
+                <h2>Top Favorites</h2>
+                <span>Jakarta</span>
+              </div>
+              <ol class="ranked">
+                <li>Truffle Mie Ayam</li>
+                <li>Smoked Beef Rice Bowl</li>
+                <li>Pandan Cloud Latte</li>
+              </ol>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
